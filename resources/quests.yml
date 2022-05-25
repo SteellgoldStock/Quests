@@ -1,0 +1,68 @@
+quests:
+  - name: "The Beginning"
+    id: 1
+    description: "You are a young adventurer, and you have been sent to the world of the dragons to find the legendary sword of the dragon kings."
+    icon:
+      type: "path"
+      path: "textures/items/diamond_sword"
+    rewards:
+      - name: "Diamond Sword"
+        item: "276:0"
+        amount: 1
+      - name: "Diamond Helmet"
+        item: "310:0"
+        amount: 1
+      - name: "Diamond Chestplate"
+        item: "311:0"
+        amount: 1
+      - name: "Diamond Leggings"
+        item: "312:0"
+        amount: 1
+      - name: "Diamond Boots"
+        item: "313:0"
+        amount: 1
+      - name: "Say Thanks"
+        command: 'say "{player}" thanks for playing!'
+    daily: true
+    type: "break"
+    objective:
+      block: "1:0"
+      amount: 1
+  - name: "After the Beginning"
+    id: 2
+    description: "You have found the legendary sword of the dragon kings, and you are now ready to return to the world of the dragons."
+    icon:
+      type: "url"
+      path: "https://i.imgur.com/qZQZQZu.png"
+    rewards:
+      - name: "Golden Apple"
+        item: "322:0"
+        amount: 64
+      - name: "Say Thanks"
+        command: 'say "{player}" thanks for playing!'
+    daily: false
+    time:
+      d: 1
+      h: 12
+      m: 0
+      s: 0
+    type: "kill"
+    objective:
+      amount: 1
+  - name: "Prepare for the End"
+    id: 3
+    description: "You've found a enchanted sword, and you are now ready to return to the world of the dragons."
+    icon:
+      type: "url"
+      path: "https://i.imgur.com/qZQZQZu.png"
+    rewards:
+      - name: "Dirt."
+        item: "3:0"
+        amount: 1
+      - name: "Say Thanks"
+        command: 'say "{player}" is Good Player!'
+    daily: true
+    type: "enchant"
+    objective:
+      item: "276:0"
+      amount: 1

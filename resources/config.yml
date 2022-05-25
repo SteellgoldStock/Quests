@@ -1,0 +1,95 @@
+timezone: "Europe/Paris"
+
+log: true
+
+timecode:
+  d: " jours "
+  h: " heures "
+  m: " minutes "
+  s: " secondes "
+
+messages:
+  prefix: "§f[§aQuests§f] §r"
+  prefix_error: "§f[§cQuests§f] §r"
+
+  types:
+    place: "Placer"
+    break: "Casser"
+    bring: "Apporter"
+    craft: "Crafter"
+    enchant: "Enchanter"
+    kill: "Tuer"
+
+  quest_accepted: "§aVous venez de démarrer la quête §f{QUEST_NAME}"
+  quest_completed: "§aVous avez terminé la quête §f{QUEST_NAME}"
+  quest_canceled: "§cVous avez annulé la quête §f{QUEST_NAME}, vous ne pourrez plus la retenter"
+  quest_missing: "§cVous devez encore §f{TYPE} §lx{COUNT} §r§f{NAME} §cpour terminer la quête §f{QUEST_NAME}"
+
+  quest_completed_all: "§aVous avez déjà terminé toutes les quêtes qui était disponible"
+
+  timeout: "§cVous avez mis trop de temp pour terminer la quête §f{QUEST_NAME}§c, vous ne pourrez plus la recommencer !"
+
+  item_missing: "§cIl vous manque §f§lx{COUNT} §r§f{NAME}"
+
+  quest_already_progress: "§cVous avez déjà une quête en cours !"
+  consecutive_reward_already_received: "§cVous avez déjà récupéré la récompense §f{REWARD_NAME}"
+  consecutive_reward_received: "§aVous avez récupéré la récompense §f{REWARD_NAME} §ades §f{DAYS} jours §aconsécutif bravo !"
+  consecutive_reward_day_missing: "§cIl vous manque encore §f{DAYS} jours§c pour récupérer la récompense §f{REWARD_NAME}"
+
+  daily_quest:
+    choosed: "§aLa quête quotidienne du §f{DATE}§a a été choisie, il s'agira de la quête §f{QUEST_NAME}§a ainsi que sa récompense §f{REWARD_NAME}§a."
+    daily_quest_already_done: "§cVous avez déjà accompli la quête quotidienne du §f{DATE}§c, attendez celle de demain."
+    cannot_cancel_daily: "§cVous ne pouvez pas abandonner les quêtes quotidiennes!"
+
+tips:
+  progress: "§a+{COUNT} [§f{QUEST_NAME}§a]"
+  progress_end: "§aQuête §f{QUEST_NAME}§a terminé - récupérez votre récompense !"
+
+forms:
+  consecutive_form:
+    title: "Récompense des quêtes consécutives"
+    description: "Récuperez les récompenses de quêtes consécutives, vous êtes actuellement à §e{COUNT} points consécutifs§f, n'oubliez pas de faire chaque jour votre quête quotidienne, au risque de vous faire réinitialiser votre compteur !"
+  menu:
+    title: "Quêtes"
+    text: "Choisissez une option"
+    quests: "Liste des quêtes"
+
+    time: "Temp restant: {days}d{hours}h{minutes}m{seconds}s"
+    reward: "§2§lRécompense disponible !"
+    timeout: "§c§lTemps écoulé !"
+    quests_quest: "{QUEST_NAME}"
+
+    daily: "Quête du jour\nTemp restant: {h}h {m}m et {s}s"
+    consecutive: "Récompenses des quêtes consécutives"
+    quest_until: "Temps restant: {d}j {h}h {m}m {s}s"
+  quests:
+    title: "Liste des quêtes"
+    text: "Choisissez une quête à démarrer"
+  quest:
+    quest_multiply_color: "§a"
+    quest_multiply_endcolor: "§f"
+    description: "§a» §f{DESCRIPTION}\n\n§aRécompense: §f{REWARD_NAME}\n§aDurée : §f{DURATION}"
+    description_progress: "§a» §f{DESCRIPTION}\n\n§aRécompense: §f{REWARD_NAME}\n§aDurée : §f{DURATION}\n\n§aProgression : §f{PROGRESS}§a/§f{TOTAL}"
+  quest_cancel:
+    title: "Abandonner une quête"
+    text: "Vous êtes sur le point d'abandonner la quête §f{QUEST_NAME}§a, voulez-vous continuer ?"
+    yes: "Oui"
+    no: "Non"
+  consecutive:
+    title: "Récompenses de quêtes consécutives"
+    text: "Récupérez les récompenses de quêtes consécutives, vous êtes a §a{DAYS_COUNT} jours §rconsécutif actuellement"
+
+  no_duration: "Aucune durée (autant de temps que vous voulez)"
+  accept: "Démarrer la quête"
+  validate: "Valider la quête"
+  cancel: "Annuler la quête"
+
+consecutive_day_rewards:
+  5:
+    name: "5 jours consécutifs"
+    command: 'say "{player}" vient de récupérer la récompense des §f5 jours consécutifs !"'
+    item: "1:0:0"
+  10:
+    name: "10 jours consécutifs"
+    command: null
+    item: "264:0:1"
