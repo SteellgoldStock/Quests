@@ -1,0 +1,115 @@
+timezone: "Europe/Paris"
+
+timecode:
+  d: " jours "
+  h: " heures "
+  m: " minutes "
+  s: " secondes "
+
+forms:
+  no_time: "Aucune contrainte de temps"
+
+  button_back: "Retour"
+  button_quests: "Quêtes disponibles"
+  button_daily: "Quête journalière"
+  button_consecutives_rewards: "Récompenses consécutives"
+
+  button_start: "Démarrer"
+  button_validate: "Valider la quête"
+
+  home_quests:
+    title: "Liste des quêtes"
+    description: "Choisissez ce que vous voulez faire"
+  quests:
+    title: "Quêtes"
+    description: "Choisissez une quête que vous voulez accomplir et lançez la, attetion si un temps limite est défini et que n'avez pas accompli la quête vous ne pourrez plus retenter votre chance !"
+  quest:
+    title: "Quête: {NAME}"
+    description: "§e- §fDescription: §r{DESCRIPTION}\n§e- §fTemps pour accomplir la quête: §e{TIME}\n\n§e- §fRécompense: §r{REWARD}"
+  quest_in_progress:
+    title: "Quête en cours"
+    description: "§e- §fDescription: §r{DESCRIPTION}\n§e- §fRécompense: §r{REWARD}\n\n§e- §fTemps restant: §r{TIME}"
+  consecutive_rewards:
+    title: "Récompenses de quêtes consécutives"
+    description: "Faites vos quêtes quotidiennes chaquent jour, mais n'en ratez pas sinon vous devez recommencer !\n§e- §fVous êtes à §e{QUEST_CONSECUTIVE] §fquête consécutives"
+
+messages:
+  active_quest: "Vous avez déjà une quête en cours, vous ne pouvez pas en lancer une autre"
+  quest_daily: "Cette quête est une quête journalière, vous n'avez pas besoin de la lancer, finissez la avant le jour prochain ou vous ne pourrez pas & plus recommencer ni récuperer sa récompense"
+
+  quest_valited: "§aVous venez de valider la quête §f{QUEST}§a avec succès."
+  quest_unvalidated: "§cIl vous manque à refaire §f{REMAINING_TIME} fois§c pour valider la quête §f{QUEST}§c."
+
+  inventory_full: "§cVotre inventaire est plein, vous ne pouvez pas valider la quête."
+  no_item_required: "§cVous n'avez pas l'item requis pour valider la quête."
+  no_kill_count_required: "§cVous n'avez pas le nombre de kills requis pour valider la quête."
+
+  consecutive_already_claimed: "§cVous avez déjà récupéré cette récompense."
+  consecutive_claimed: "§aVous venez de récupérer la récompense des §f{DAYS} jours §aconsécutifs !"
+  consecutive_not_reached: "§cVous n'avez pas encore le nombre de jours requis pour récupérer la récompense, il vous en manque §f{REMAINING_DAYS}§c."
+
+  not_enough_placed: "§cVous n'avez pas poser assez de ce bloc pour valider la quête !"
+  not_enough_breaked: "§cVous n'avez pas poser assez de ce bloc pour valider la quête !"
+consecutive_day_rewards:
+  5:
+    name: "5 jours consécutifs"
+    command: null
+    item:
+      id: 1
+      meta: 0
+      count: 1
+  10:
+    name: "10 jours consécutifs"
+    command: null
+    item:
+      id: 1
+      meta: 0
+      count: 1
+quests:
+  0:
+    name: "Item Reward"
+    icon: "textures/items/diamond"
+    description: "This is the first quest"
+    quest_type: "default"
+    quest_action_type: "blockPlace"
+    time:
+      d: 0
+      h: 1
+      m: 0
+      s: 0
+    objective:
+      block:
+        id: 54
+        meta: 0
+      count: 10
+    rewards:
+      0:
+        name: "reward 1"
+        command: null
+        item:
+          id: 1
+          meta: 0
+          count: 1
+      1:
+        name: "reward 2"
+        command: null
+        item:
+          id: 1
+          meta: 0
+          count: 1
+  1:
+    name: "Command Execution Reward"
+    icon: "https://i.imgur.com/XqQZQZL.png"
+    description: "This is the second quest."
+    quest_type: "daily"
+    quest_action_type: "blockBreak"
+    objective:
+      block:
+        id: 1
+        meta: 0
+      count: 10
+    rewards:
+      0:
+        name: "reward 1"
+        command: "say {PLAYER} has breaked 10 {BLOCK_NAME}!"
+        item: null
