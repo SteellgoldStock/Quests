@@ -29,10 +29,10 @@ class UpdateQuestTask extends Task {
 		}
 	}
 
-	public static function checkConsecutives(){
+	public static function checkConsecutives(bool $force = false){
 		$data = new Config(Quests::getInstance()->getDataFolder() . "data.yml", Config::YAML);
 
-		if (date("d/m/y") == $data->get("next")) {
+		if ($force OR date("d/m/y") == $data->get("next")) {
 			if($data->exists("daily_quest")){
 				Quests::getInstance()->daily = Quest::fromStdClass(json_decode($data->get("daily_quest")),json_decode($data->get("icon")),json_decode($data->get("objective")),json_decode($data->get("reward")));
 
@@ -57,6 +57,8 @@ class UpdateQuestTask extends Task {
 	public static function generate(bool $force = false): void {
 		$data = new Config(Quests::getInstance()->getDataFolder() . "data.yml", Config::YAML);
 		if (date("d/m/y") == $data->get("next") OR $force) {
+			self::checkConsecutives($force);
+
 			$line = [];
 			foreach (Quests::getInstance()->getQuests() as $quest) {
 				if ($quest->isDaily()) {

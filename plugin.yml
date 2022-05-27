@@ -4,3 +4,7 @@ author: "Steellgold"
 api: 4.0.0
 main: steellgold\quests\Quests
 version: 1.0.0
+
+permissions:
+  quests.reroll:
+    default: op

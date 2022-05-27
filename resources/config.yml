@@ -37,6 +37,8 @@ messages:
   consecutive_reward_day_missing: "§cIl vous manque encore §f{DAYS} jours§c pour récupérer la récompense §f{REWARD_NAME}"
 
   daily_quest:
+    rerolled: "§aVous avez rerollé la quête quotidienne"
+
     choosed: "§aLa quête quotidienne du §f{DATE}§a a été choisie, il s'agira de la quête §f{QUEST_NAME}§a ainsi que sa récompense §f{REWARD_NAME}§a."
     daily_quest_already_done: "§cVous avez déjà accompli la quête quotidienne du §f{DATE}§c, attendez celle de demain."
     cannot_cancel_daily: "§cVous ne pouvez pas abandonner les quêtes quotidiennes!"

@@ -5,6 +5,8 @@ namespace steellgold\quests;
 use JsonException;
 use pocketmine\block\BlockFactory;
 use pocketmine\item\ItemFactory;
+use pocketmine\permission\Permission;
+use pocketmine\permission\PermissionManager;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use steellgold\dktapps\pmforms\FormIcon;
@@ -48,6 +50,8 @@ class Quests extends PluginBase {
 	 */
 	protected function onEnable(): void {
 		self::$instance = $this;
+
+		PermissionManager::getInstance()->addPermission(new Permission("quests.reroll","Allow player to use /quests reroll command to regenerate a quest"));
 
 		if (!file_exists($this->getDataFolder() . "config.yml")) {
 			$this->saveResource("config.yml");
